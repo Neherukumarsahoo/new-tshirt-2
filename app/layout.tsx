@@ -1,21 +1,12 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+import TopNav from '@/components/layout/TopNav'
 
-export const metadata = {
-  title: '3D T-Shirt Designer',
-  description: 'Customize your t-shirt with colors and designs in 3D',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <div className="min-h-screen bg-gray-50">
+      <TopNav />
+      {children}
+    </div>
   )
 }
